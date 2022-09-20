@@ -20,6 +20,7 @@ function addLeadingZero(value) {
   return value.toString().padStart(2, '0');
 }
 btnStart.addEventListener('click', onBtnClick);
+
 function timerBig({ days, hours, minutes, seconds }) {
   daysTimer.textContent = addLeadingZero(`${days}`);
   hoursTimer.textContent = addLeadingZero(`${hours}`);
@@ -27,7 +28,7 @@ function timerBig({ days, hours, minutes, seconds }) {
   secondsTimer.textContent = addLeadingZero(`${seconds}`);
 }
 function onBtnClick(event) {
-  intervalId = setInterval(() => {
+  let intervalId = setInterval(() => {
     const msResult = selectedDay.getTime() - Date.now();
     const timer = convertMs(msResult);
     const { days, hours, minutes, seconds } = timer;
