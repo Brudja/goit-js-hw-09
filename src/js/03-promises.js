@@ -31,12 +31,12 @@ function onSubmit(event) {
     getPromise(index, delayValue)
       .then(({ position, delay }) => {
         Notiflix.Notify.success(
-          `:белая_галочка: Fulfilled promise ${position} in ${delay}ms`
+          `✅ Fulfilled promise ${position} in ${delay}ms`
         );
       })
       .catch(({ position, delay }) => {
         Notiflix.Notify.failure(
-          `:х: Rejected promise ${position} in ${delay}ms`
+          `❌ Rejected promise ${position} in ${delay}ms`
         );
       });
     delayValue += stepValue;
